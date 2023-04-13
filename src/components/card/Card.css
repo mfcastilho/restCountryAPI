@@ -1,0 +1,37 @@
+
+
+.card-container{
+     width: 22%;
+     border-radius: .5rem;
+     box-shadow: 2px 2px 6px 5px rgba(211, 209, 209, 0.5);
+}
+
+.card-container img{
+     border-radius: .5rem;
+     width: 100%;
+}
+
+.infos-box{
+     padding: 2rem 1.5rem 4rem 1.5rem;
+     display: flex;
+     flex-direction: column;
+}
+
+.country-name{
+     font-size: 2rem;
+     font-weight: 800;
+     margin-bottom: 2rem;
+}
+
+.country-population, .country-region{
+     font-size: 1.4rem;
+     margin-bottom: .7rem;
+}
+
+.country-capital{
+     font-size: 1.4rem;
+}
+
+.wrapper-country-infos span{
+     font-size: 1.4rem;
+}
