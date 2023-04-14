@@ -2,7 +2,6 @@ import React, { useEffect, useState } from 'react';
 import "./Card.css";
 import axios from 'axios';
 
-
 const baseURL = "https://restcountries.com/v3.1";
 
 function Card(){
