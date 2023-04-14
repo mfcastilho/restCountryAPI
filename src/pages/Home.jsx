@@ -7,10 +7,13 @@ import Card from "../components/card/Card";
 function Home(){
 
      return(
-        <div className="home-container">
+          <div className="home-container">
            
-           <HomeTopPart />
-           <Card />
+          <main>
+               <HomeTopPart />
+               <Card />
+          </main>
+           
 
         </div>
     )
