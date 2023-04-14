@@ -20,23 +20,23 @@ function HomeTopPart(){
           
           <div className="home-top-part-box">
                 <form action="" className="search-country-form">
-                    <button className="input-button"><img src="../public/lupa.png" alt="" /></button>
-                    <input type="text" className="search-country-input" placeholder="Search for a country..." />
+                    <button className="input-button"><img src="../public/lupa.svg" alt="" /></button>
+                    <input type="text" className="search-country-input" />
                 </form>
 
                 <select name="region" id="" className="region-select-list" defaultValue="Filter by Region">
                     <option disabled hidden>Filter by Region</option>
-                    <option value="" style={{fontSize:"20px"}} disabled>&nbsp;</option>
+                    <option value="" style={{fontSize:"5px"}} disabled>&nbsp;</option>
                     <option className="option-list"value="Africa">África</option>
-                    <option value="" style={{fontSize:"7px"}} disabled>&nbsp;</option>
+                    <option value="" style={{fontSize:"5px"}} disabled>&nbsp;</option>
                     <option value="America">América</option>
-                    <option value="" style={{fontSize:"7px"}} disabled>&nbsp;</option>
+                    <option value="" style={{fontSize:"5px"}} disabled>&nbsp;</option>
                     <option value="Asia">Ásia</option>
-                    <option value="" style={{fontSize:"7px"}} disabled>&nbsp;</option>
+                    <option value="" style={{fontSize:"5px"}} disabled>&nbsp;</option>
                     <option value="Europa">Europa</option>
-                    <option value="" style={{fontSize:"7px"}} disabled>&nbsp;</option>
+                    <option value="" style={{fontSize:"5px"}} disabled>&nbsp;</option>
                     <option value="Oceania">Oceania</option>
-                    <option value="" style={{fontSize:"20px"}} disabled>&nbsp;</option>
+                    <option value="" style={{fontSize:"5px"}} disabled>&nbsp;</option>
                 </select>
            </div>
      )
