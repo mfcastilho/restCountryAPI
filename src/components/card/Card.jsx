@@ -1,30 +1,46 @@
-import React, { useEffect, useState } from 'react';
+import React, { useContext, useEffect, useState } from 'react';
 import "./Card.css";
 import axios from 'axios';
+import {SelectRegionContext} from "../selectRegionProvider/SelectRegionProvider";
 
 const baseURL = "https://restcountries.com/v3.1";
 
 function Card(){
 
+     const  { selectedRegion} = useContext(SelectRegionContext);
      const [countries, setCountries] = useState([]);
 
      async function getAllcountries(){
           try {
                const response = await axios.get(`${baseURL}/all`);
                setCountries(response.data);
-               response.data.forEach(country=>{
-                    console.log(country.name.common);
-               })
+               // response.data.forEach(country=>{
+               //      console.log(country.name.common);
+               // })
 
           } catch (error) {
                console.log(error.data.massage);
           }
      }
 
+     async function getCountriesByRegion(){
+          try {
 
-     function getCountriesByRegion(){
-          
+               const response = await axios.get(`${baseURL}/region/${selectedRegion}`);
+               setCountries(response.data);
+               console.log(response.data);
+               
+          } catch (error) {
+               console.log(error);
+          }
      }
+
+     useEffect(()=>{
+          getCountriesByRegion()
+     },[selectedRegion])
+
+     
+     
 
      useEffect(()=>{
           getAllcountries();

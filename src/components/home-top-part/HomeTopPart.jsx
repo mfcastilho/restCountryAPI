@@ -31,15 +31,15 @@ function HomeTopPart(){
                 <select name="region" id="" className="region-select-list" value={selectedRegion} onChange={(e)=> setSelectedRegion(e.target.value)}>
                     <option>Filter by Region</option>
                     <option value="" style={{fontSize:"20px"}} disabled>&nbsp;</option>
-                    <option className="option-list"value="Africa">África</option>
+                    <option value="africa" className="option-list">África</option>
                     <option value="" style={{fontSize:"7px"}} disabled>&nbsp;</option>
-                    <option value="America">América</option>
+                    <option value="americas">América</option>
                     <option value="" style={{fontSize:"7px"}} disabled>&nbsp;</option>
-                    <option value="Asia">Ásia</option>
+                    <option value="asia">Ásia</option>
                     <option value="" style={{fontSize:"7px"}} disabled>&nbsp;</option>
-                    <option value="Europa">Europa</option>
+                    <option value="europe">Europa</option>
                     <option value="" style={{fontSize:"7px"}} disabled>&nbsp;</option>
-                    <option value="Oceania">Oceania</option>
+                    <option value="oceania">Oceania</option>
                     <option value="" style={{fontSize:"20px"}} disabled>&nbsp;</option>
                 </select>
            </div>
