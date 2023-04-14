@@ -1,17 +1,21 @@
-import React from "react";
-import "./HomeTopPart.css"
+import React, {useContext} from "react";
+import "./HomeTopPart.css";
+import {SelectRegionContext} from "../selectRegionProvider/SelectRegionProvider";
 
 
 function HomeTopPart(){
 
+    const {selectedRegion, setSelectedRegion} = useContext(SelectRegionContext);
+
+    console.log(selectedRegion);
 
     function InsertinMarginBottomIntheTagsOptions(){
         const options = document.querySelectorAll("option");
 
-        for(let i = 0; i < options.length; i++){
-            console.log(options[i].value);
-            options[i].style.marginBottom = "10px";
-        }
+     //    for(let i = 0; i < options.length; i++){
+     //        console.log(options[i].value);
+     //        options[i].style.marginBottom = "10px";
+     //    }
     }
 
     InsertinMarginBottomIntheTagsOptions()
@@ -24,8 +28,8 @@ function HomeTopPart(){
                     <input type="text" className="search-country-input" placeholder="Search for a country..." />
                 </form>
 
-                <select name="region" id="" className="region-select-list" defaultValue="Filter by Region">
-                    <option disabled hidden>Filter by Region</option>
+                <select name="region" id="" className="region-select-list" value={selectedRegion} onChange={(e)=> setSelectedRegion(e.target.value)}>
+                    <option>Filter by Region</option>
                     <option value="" style={{fontSize:"20px"}} disabled>&nbsp;</option>
                     <option className="option-list"value="Africa">África</option>
                     <option value="" style={{fontSize:"7px"}} disabled>&nbsp;</option>

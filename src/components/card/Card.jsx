@@ -21,17 +21,22 @@ function Card(){
           }
      }
 
+
+     function getCountriesByRegion(){
+          
+     }
+
      useEffect(()=>{
           getAllcountries();
-     },[])
+     },[]);
      
      return(
           <div className="card-container">
 
                {countries.length > 0 ? (
                     countries.map((country, index)=> (
-                         <div className="card-box">
-                              <img key={index} src={`${country.flags.png}`} alt="" />
+                         <div key={index} className="card-box">
+                              <img src={`${country.flags.png}`} alt="" />
                               <div className="infos-box">
                                    <h4 className="country-name">{country.name.common}</h4>
 
