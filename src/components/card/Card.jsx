@@ -2,10 +2,15 @@ import React, { useContext, useEffect, useState } from 'react';
 import "./Card.css";
 import axios from 'axios';
 import {SelectRegionContext} from "../selectRegionProvider/SelectRegionProvider";
+import { Navigate, useNavigate } from 'react-router-dom';
 
 const baseURL = "https://restcountries.com/v3.1";
 
 function Card(){
+
+     const navigate = useNavigate();
+
+     const [selectedCountryName, setSelectedCountryName] = useState("");
 
      const  { selectedRegion} = useContext(SelectRegionContext);
      const [countries, setCountries] = useState([]);
@@ -35,8 +40,23 @@ function Card(){
           }
      }
 
+     function goToCountryDetailsPage(e){
+
+          const countryName = e.currentTarget.getAttribute("data-name");
+
+          ///e.target.dataset.name funcionaria somente se o evento ocorresse no proprio elemento, mas como o
+          //onClick está no elemento pai devemos usar o e.currentTarget.getAttribute("data-name")
+          //const countryName = e.target.dataset.name;
+          console.log(countryName);
+          setSelectedCountryName(countryName);
+          navigate(`/country`, {state: {countryName}});
+     }
+
      useEffect(()=>{
-          getCountriesByRegion()
+          if(selectedRegion === "africa" || selectedRegion === "americas" || selectedRegion === "asia" || selectedRegion === "europe" || selectedRegion === "oceania"){
+               getCountriesByRegion()
+          }
+          
      },[selectedRegion])
 
      
@@ -51,7 +71,7 @@ function Card(){
 
                {countries.length > 0 ? (
                     countries.map((country, index)=> (
-                         <div key={index} className="card-box">
+                         <div key={index} onClick={goToCountryDetailsPage} data-name={country.name.common} className="card-box">
                               <img src={`${country.flags.png}`} alt="" />
                               <div className="infos-box">
                                    <h4 className="country-name">{country.name.common}</h4>
