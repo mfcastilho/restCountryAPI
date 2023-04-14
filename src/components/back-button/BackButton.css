@@ -1,0 +1,27 @@
+
+.back-button-container{
+     width: 100%;
+     max-width: 1440px;
+
+     margin-bottom: 4rem;
+}
+
+.back-button{
+     display: flex;
+     align-items: center;
+     gap: .5rem;
+
+     padding: .8rem 2.8rem;
+
+     border: none;
+     border-radius: .5rem;
+
+     box-shadow: 2px 1px 10px 2px rgba(201, 198, 198, 1);
+
+     cursor: pointer;
+}
+
+.back-button img{
+     width: 1.6rem;
+     height: 1.4rem;
+}
