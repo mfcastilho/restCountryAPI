@@ -6,4 +6,85 @@
      margin: 0 auto;
 
      padding: 0 6rem;
+
+     margin-bottom: 12rem;
+}
+
+.country-flag-and-infos-container{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+
+}
+
+.country-flag-and-infos-container img{
+     width: 40%;
+}
+
+.country-infos-box{
+     width: 52%;
+     display: flex;
+     flex-direction: column;
+     justify-content: space-around;
+     gap: 2.3rem;
+     
+}
+
+.country-infos-box h4{
+     font-size: 3rem;
+}
+
+.wrapper-country-infos-box-parts{
+     display: flex;
+     justify-content: space-between;
+
+     margin-bottom: 4rem;
+}
+
+.country-infos-box-left-part{
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+}
+
+
+
+.info-label{
+     font-size: 1.6rem;
+}
+
+.country-info{
+     font-size: 1.6rem;
+}
+
+.country-infos-box-right-part{
+     display: flex;
+     flex-direction: column;
+     gap: 1rem;
+}
+
+.country-infos-box-bottom-part{
+     display: flex;
+     align-items: center;
+}
+
+.border-countries{
+     font-size: 1.6rem;
+
+     margin-right: 1.6rem;
+}
+.border-country-name{
+     font-size: 1.4rem;
+     padding: .6rem 2rem;
+
+     width: 17%;
+
+     box-shadow: 1px 1px 5px 1px rgba(201, 198, 198, 1);
+
+     border-radius: .5rem;
+
+     display: flex;
+     justify-content: center;
+
+     margin-left: .8rem;
 }
