@@ -68,16 +68,25 @@
      align-items: center;
 }
 
+.left-part{
+     width: 25%;
+}
+
+.right-part{
+     width: 75%;
+     display: flex;
+     flex-wrap: wrap;
+}
+
 .border-countries{
      font-size: 1.6rem;
-
      margin-right: 1.6rem;
 }
 .border-country-name{
      font-size: 1.4rem;
      padding: .6rem 2rem;
 
-     width: 17%;
+     width: 22%;
 
      box-shadow: 1px 1px 5px 1px rgba(201, 198, 198, 1);
 

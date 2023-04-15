@@ -11,7 +11,8 @@ function CountryDetails(){
      const location = useLocation();
      const countryName = location.state.countryName;
      const [country, setCountry] = useState([]);
-     const [contriesBorder, setContriesBorder] = useState([]);
+     const [countriesBorder, setCountriesBorder] = useState([]);
+   
 
      async function getCountryInfos(){
           try {
@@ -30,6 +31,23 @@ function CountryDetails(){
                
                const name = countryName.toLowerCase();
                const response = await axios.get(`${baseURL}/name/${name}?fullText=true`);
+               const country = response.data[0];
+               
+
+               const promisses = country.borders.map(async (border) => {
+                    const response = await axios.get(`${baseURL}/alpha/${border}`);
+                    const data = await response.data;
+                    // console.log(data[0].name);
+                    
+                    return data[0].name;
+               })
+
+               const countryBorders = await Promise.all(promisses);
+               console.log(countryBorders)
+               
+               setCountriesBorder(countryBorders);
+               // console.log(countriesBorder);
+
           } catch (error) {
                console.log(error.data.message);
           }
@@ -38,7 +56,9 @@ function CountryDetails(){
      useEffect(()=>{
           getCountryInfos();
           getCountryBorders();
+          
      },[])
+
 
      return (
           <div className="country-details-container">
@@ -46,8 +66,8 @@ function CountryDetails(){
 
                {country.length > 0 ? (
 
-                    country.map(country => (
-                         <div className="country-flag-and-infos-container">
+                    country.map((country, index) => (
+                         <div key={index} className="country-flag-and-infos-container">
                          <img src={country.flags.svg} alt="" />
                          <div className="country-infos-box">
 
@@ -102,10 +122,22 @@ function CountryDetails(){
                          
                          
                               <div className="country-infos-box-bottom-part">
-                                   <strong className="border-countries">Border Countries: </strong>
-                                   <span className="border-country-name">Argentina</span>
-                                   <span className="border-country-name">Uruguai</span>
-                                   <span className="border-country-name">Paraguai</span>
+                                   <div className="left-part">
+                                        <strong className="border-countries">Border Countries: </strong>
+                                   </div>
+                                   <div className="right-part">
+                                   {countriesBorder.length > 0 ? (
+
+                                        countriesBorder.map((country, index) =>(
+                                             <span key={index} className="border-country-name">{country.common}</span>
+                                        ))
+
+                                   ) : (<span >Border not found</span>)}
+                                   </div>
+                                   
+                                   
+                                 
+  
                               </div>
                               </div>
                          </div>
