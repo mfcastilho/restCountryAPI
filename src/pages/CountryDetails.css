@@ -21,10 +21,9 @@
 
 .country-flag-and-infos-container img{
      width: 40%;
-     min-height: 33rem;
-     max-height: 33rem;
+     max-height: 35rem;
 
-     /* border: .5px solid rgb(228, 224, 224); */
+     border: .5px solid rgb(228, 224, 224);
 }
 
 .country-infos-box{
