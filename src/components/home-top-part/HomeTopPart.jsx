@@ -19,14 +19,13 @@ function HomeTopPart(){
         try {
 
             const name = searchCountry.toLowerCase();
-            console.log(name);
-            const countryName = name;
 
             const response = await axios.get(`${baseURL}/name/${name}`);
             if(response){
                 setCountry(true);
             }
             
+            const countryName = response.data[0].name.common;
             navigate("/country", {state: {countryName}});
             
         } catch (error) {

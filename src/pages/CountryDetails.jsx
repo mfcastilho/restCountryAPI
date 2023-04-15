@@ -27,22 +27,9 @@ function CountryDetails(){
 
           } catch (error) {
                setResultSearchCountry(false);
-               console.log(error.data.message);
+               console.log(error.message);
           }
      }
-
-     // async function getSearchCountryInfos(){
-     //      try {
-               
-     //           const name = countryName.toLowerCase();
-     //           console.log(name)
-     //           const response = await axios.get(`${baseURL}/name/${name}`);
-     //           setCountry(response.data);
-
-     //      } catch (error) {
-     //           console.log(error.data.message);
-     //      }
-     // }
 
      async function goToCountryBorderSelected(e){
           countryName = e.currentTarget.getAttribute("data-name");
@@ -54,7 +41,7 @@ function CountryDetails(){
                getCountryBorders();
 
           } catch (error) {
-               console.log(error.data.message);
+               console.log(error.message);
           }
           
      }
@@ -76,11 +63,8 @@ function CountryDetails(){
                })
 
                const countryBorders = await Promise.all(promisses);
-               console.log(countryBorders)
-               
                setCountriesBorder(countryBorders);
-               // console.log(countriesBorder);
-
+               
           } catch (error) {
                console.log(error.data.message);
           }

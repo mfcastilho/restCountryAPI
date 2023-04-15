@@ -9,9 +9,6 @@ const baseURL = "https://restcountries.com/v3.1";
 function Card(){
 
      const navigate = useNavigate();
-
-     const [selectedCountryName, setSelectedCountryName] = useState("");
-
      const  { selectedRegion} = useContext(SelectRegionContext);
      const [countries, setCountries] = useState([]);
 
@@ -19,12 +16,9 @@ function Card(){
           try {
                const response = await axios.get(`${baseURL}/all`);
                setCountries(response.data);
-               // response.data.forEach(country=>{
-               //      console.log(country.name.common);
-               // })
 
           } catch (error) {
-               console.log(error.data.massage);
+               console.log(error.massage);
           }
      }
 
@@ -36,7 +30,7 @@ function Card(){
                console.log(response.data);
                
           } catch (error) {
-               console.log(error);
+               console.log(error.massage);
           }
      }
 
@@ -47,8 +41,7 @@ function Card(){
           ///e.target.dataset.name funcionaria somente se o evento ocorresse no proprio elemento, mas como o
           //onClick está no elemento pai devemos usar o e.currentTarget.getAttribute("data-name")
           //const countryName = e.target.dataset.name;
-          console.log(countryName);
-          setSelectedCountryName(countryName);
+
           navigate(`/country`, {state: {countryName}});
      }
 
@@ -60,8 +53,6 @@ function Card(){
      },[selectedRegion])
 
      
-     
-
      useEffect(()=>{
           getAllcountries();
      },[]);
