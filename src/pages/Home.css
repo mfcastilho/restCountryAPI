@@ -16,3 +16,10 @@ main{
      padding: 0 6rem;
      background-color: #FAFAFA;
 }
+
+
+
+.main-dark-mode{
+     background-color: var(--dark-mode-elements);
+     background-color: var(--background-dark-mode);
+}

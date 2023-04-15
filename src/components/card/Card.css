@@ -32,11 +32,12 @@
      padding: 2rem 1.5rem 5rem 1.5rem;
      display: flex;
      flex-direction: column;
+     
 }
 
 .country-name{
      font-size: 2rem;
-     font-weight: 800;
+     font-weight: 600;
      margin-bottom: 2rem;
 }
 
@@ -52,3 +53,19 @@
 .wrapper-country-infos span{
      font-size: 1.4rem;
 }
+
+
+
+
+.card-box-dark-mode{
+     background-color: var(--dark-mode-elements);
+     box-shadow: 0px 0px 10px 1px rgba(8, 11, 14, 0.5);
+     color: var(--dark-mode-text);
+     
+}
+
+.card-container .card-image-dark-mode{
+     border: .5px solid #1c2b34;
+}
+
+/*8, 11, 14,*/

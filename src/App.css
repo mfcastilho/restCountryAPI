@@ -1,3 +1,15 @@
+:root{
+     --background-dark-mode: hsl(207, 26%, 17%);
+     --dark-mode-elements: hsl(209, 23%, 22%);
+     --dark-mode-text: hsl(0, 0%, 100%);
+
+     
+     --light-mode-background: hsl(0, 0%, 98%);
+     --light-mode-elements: hsl(0, 0%, 100%);
+     --light-mode-text: hsl(200, 15%, 8%);
+     --light-mode-input: hsl(0, 0%, 52%);
+}
+
 *{
      margin: 0;
      padding: 0;
@@ -12,4 +24,8 @@ html{
 body{
      width: 100%;
      margin: 0 auto;
+}
+
+.body-dark-mode{
+     background-color: var(--background-dark-mode);
 }

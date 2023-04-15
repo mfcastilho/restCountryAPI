@@ -40,13 +40,13 @@ function HomeTopPart(){
 
         <div className="home-top-part-container">
             <div className="home-top-part-box">
-                <form action="" className="search-country-form">
-                    <button className="input-button" onClick={searchingCountry}><img src="../public/lupa.png" alt="" /></button>
-                    <input type="text" className="search-country-input" value={searchCountry} onChange={(e)=> setSearchCountry(e.target.value)} placeholder="Search for a country..." />
+                <form action="" className="search-country-form ">
+                    <button className="input-button " onClick={searchingCountry}><img src="../public/lupa.png" alt="" /></button>
+                    <input type="text" className="search-country-input " value={searchCountry} onChange={(e)=> setSearchCountry(e.target.value)} placeholder="Search for a country..." />
                 </form>
                 
 
-                <select name="region" id="" className="region-select-list" value={selectedRegion} onChange={(e)=> setSelectedRegion(e.target.value)}>
+                <select name="region" id="" className="region-select-list " value={selectedRegion} onChange={(e)=> setSelectedRegion(e.target.value)}>
                     <option>Filter by Region</option>
                     <option value="" style={{fontSize:"20px"}} disabled>&nbsp;</option>
                     <option value="africa" className="option-list">África</option>

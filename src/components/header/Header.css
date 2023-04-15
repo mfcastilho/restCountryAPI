@@ -24,13 +24,9 @@ header{
      display: flex;
      align-items: center;
      gap: .5rem;
-}
 
-/* .light-mode-box{
-     display: flex;
-     align-items: center;
-     gap: .5rem;
-} */
+     cursor: pointer;
+}
 
 .disable{
      display: none;
@@ -44,4 +40,15 @@ header{
 .dark-mode-img, .light-mode-img{
      width: 1.4rem;
      margin-bottom: .2rem;
+}
+
+
+
+
+
+
+.header-dark-mode{
+     background-color: var(--dark-mode-elements);
+     box-shadow: 0px 0px 10px 1px rgba(8, 11, 14, 0.5);
+     color: var(--dark-mode-text);
 }

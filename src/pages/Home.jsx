@@ -9,7 +9,7 @@ function Home(){
      return(
           <div className="home-container">
            
-          <main>
+          <main className="">
                <HomeTopPart />
                <Card />
           </main>

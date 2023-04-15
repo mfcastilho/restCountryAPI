@@ -62,8 +62,8 @@ function Card(){
 
                {countries.length > 0 ? (
                     countries.map((country, index)=> (
-                         <div key={index} onClick={goToCountryDetailsPage} data-name={country.name.common} className="card-box">
-                              <img src={`${country.flags.png}`} alt="" />
+                         <div key={index} onClick={goToCountryDetailsPage} data-name={country.name.common} className="card-box ">
+                              <img className='' src={`${country.flags.png}`} alt="" />
                               <div className="infos-box">
                                    <h4 className="country-name">{country.name.common}</h4>
 
