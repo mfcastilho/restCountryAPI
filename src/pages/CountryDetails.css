@@ -15,10 +15,16 @@
      align-items: center;
      justify-content: space-between;
 
+     margin-top: 6.5rem;
+
 }
 
 .country-flag-and-infos-container img{
      width: 40%;
+     min-height: 33rem;
+     max-height: 33rem;
+
+     /* border: .5px solid rgb(228, 224, 224); */
 }
 
 .country-infos-box{
@@ -84,9 +90,9 @@
 }
 .border-country-name{
      font-size: 1.4rem;
-     padding: .6rem 2rem;
+     padding: .6rem;
 
-     width: 22%;
+     min-width: 22%;
 
      box-shadow: 1px 1px 5px 1px rgba(201, 198, 198, 1);
 

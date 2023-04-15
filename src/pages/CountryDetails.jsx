@@ -1,17 +1,20 @@
-import React, { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
 import "./CountryDetails.css";
 import BackButton from "../components/back-button/BackButton";
 import { useLocation } from "react-router-dom";
 import axios from "axios";
+
 
 const baseURL = "https://restcountries.com/v3.1";
 
 function CountryDetails(){
 
      const location = useLocation();
-     const countryName = location.state.countryName;
+     let countryName = location.state.countryName;
+     console.log(countryName);
      const [country, setCountry] = useState([]);
      const [countriesBorder, setCountriesBorder] = useState([]);
+
    
 
      async function getCountryInfos(){
@@ -20,19 +23,35 @@ function CountryDetails(){
                const name = countryName.toLowerCase();
                const response = await axios.get(`${baseURL}/name/${name}`);
                setCountry(response.data);
+               
 
           } catch (error) {
+               setResultSearchCountry(false);
                console.log(error.data.message);
           }
      }
 
+     // async function getSearchCountryInfos(){
+     //      try {
+               
+     //           const name = countryName.toLowerCase();
+     //           console.log(name)
+     //           const response = await axios.get(`${baseURL}/name/${name}`);
+     //           setCountry(response.data);
+
+     //      } catch (error) {
+     //           console.log(error.data.message);
+     //      }
+     // }
+
      async function goToCountryBorderSelected(e){
-          const nameCountry = e.currentTarget.getAttribute("data-name");
+          countryName = e.currentTarget.getAttribute("data-name");
           try {
                
-               const name = nameCountry.toLowerCase();
+               const name = countryName.toLowerCase();
                const response = await axios.get(`${baseURL}/name/${name}`);
                setCountry(response.data);
+               getCountryBorders();
 
           } catch (error) {
                console.log(error.data.message);

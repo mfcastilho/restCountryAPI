@@ -4,6 +4,9 @@
      box-sizing: border-box;
 }
 
+.home-top-part-container{
+     margin: 4rem auto;
+}
 
 .home-top-part-box{
      width: 100%;
@@ -12,7 +15,7 @@
      justify-content: space-between;
      align-items: center;
 
-     margin: 4rem auto;
+     
 }
 
 .search-country-form{
@@ -92,4 +95,10 @@
 .region-select-list option {
      line-height: 2rem; 
      padding: 0.5rem;
+   }
+
+   .danger{
+     color: red;
+     font-size: 1.2rem;
+     margin-left: 3rem;
    }
