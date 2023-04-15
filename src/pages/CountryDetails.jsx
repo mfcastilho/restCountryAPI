@@ -26,6 +26,20 @@ function CountryDetails(){
           }
      }
 
+     async function goToCountryBorderSelected(e){
+          const nameCountry = e.currentTarget.getAttribute("data-name");
+          try {
+               
+               const name = nameCountry.toLowerCase();
+               const response = await axios.get(`${baseURL}/name/${name}`);
+               setCountry(response.data);
+
+          } catch (error) {
+               console.log(error.data.message);
+          }
+          
+     }
+
      async function getCountryBorders(){
           try {
                
@@ -129,7 +143,7 @@ function CountryDetails(){
                                    {countriesBorder.length > 0 ? (
 
                                         countriesBorder.map((country, index) =>(
-                                             <span key={index} className="border-country-name">{country.common}</span>
+                                             <span key={index} className="border-country-name" data-name={country.common} onClick={goToCountryBorderSelected}>{country.common}</span>
                                         ))
 
                                    ) : (<span >Border not found</span>)}
