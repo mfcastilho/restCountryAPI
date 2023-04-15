@@ -9,16 +9,6 @@ function HomeTopPart(){
 
     console.log(selectedRegion);
 
-    function InsertinMarginBottomIntheTagsOptions(){
-        const options = document.querySelectorAll("option");
-
-     //    for(let i = 0; i < options.length; i++){
-     //        console.log(options[i].value);
-     //        options[i].style.marginBottom = "10px";
-     //    }
-    }
-
-    InsertinMarginBottomIntheTagsOptions()
 
      return(
           
