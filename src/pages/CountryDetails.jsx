@@ -10,18 +10,14 @@ function CountryDetails(){
 
      const location = useLocation();
      const countryName = location.state.countryName;
-     const [country, setCountry] = useState(null);
+     const [country, setCountry] = useState([]);
+     const [contriesBorder, setContriesBorder] = useState([]);
 
      async function getCountryInfos(){
           try {
                
                const name = countryName.toLowerCase();
-               console.log(name)
                const response = await axios.get(`${baseURL}/name/${name}`);
-               console.log(response.data);
-               response.data.forEach(country=>{
-                    console.log(country)
-               })
                setCountry(response.data);
 
           } catch (error) {
@@ -29,77 +25,94 @@ function CountryDetails(){
           }
      }
 
+     async function getCountryBorders(){
+          try {
+               
+               const name = countryName.toLowerCase();
+               const response = await axios.get(`${baseURL}/name/${name}?fullText=true`);
+          } catch (error) {
+               console.log(error.data.message);
+          }
+     }
+
      useEffect(()=>{
           getCountryInfos();
+          getCountryBorders();
      },[])
 
      return (
           <div className="country-details-container">
                <BackButton />
 
-               
-               <div className="country-flag-and-infos-container">
-                    <img src="../public/Flag_of_Brazil.svg.webp" alt="" />
-                    <div className="country-infos-box">
+               {country.length > 0 ? (
 
-                         <h4>Brazil</h4>
-                         <div className="wrapper-country-infos-box-parts">
-                              
-                              <div className="country-infos-box-left-part">
+                    country.map(country => (
+                         <div className="country-flag-and-infos-container">
+                         <img src={country.flags.svg} alt="" />
+                         <div className="country-infos-box">
+
+                              <h4>{country.name.common}</h4>
+                              <div className="wrapper-country-infos-box-parts">
                                    
-                                   <div className="hugging-elements">
-                                        <strong className="info-label">Native Name: </strong>
-                                        <span className="country-info">Brasil</span>
+                                   <div className="country-infos-box-left-part">
+                                        
+                                        <div className="hugging-elements">
+                                             <strong className="info-label">Native Name: </strong>
+                                             <span className="country-info">{country.name.nativeName[Object.keys(country?.name?.nativeName)[0]].common}</span>
+                                        </div>
+
+                                        <div className="hugging-elements">
+                                             <strong className="info-label">Population: </strong>
+                                             <span className="country-info">{country.population}</span>
+                                        </div>
+                                        <div className="hugging-elements">
+                                             <strong className="info-label">Region: </strong>
+                                             <span className="country-info">{country.region}</span>
+                                        </div>
+                                        <div className="hugging-elements">
+                                             <strong className="info-label">Sub Region: </strong>
+                                             <span className="country-info">{country.subregion}</span>
+                                        </div>
+                                        <div className="hugging-elements">
+                                             <strong className="info-label">Capital: </strong>
+                                             <span className="country-info">{country.capital}</span>  
+                                        </div>
+          
                                    </div>
 
-                                   <div className="hugging-elements">
-                                        <strong className="info-label">Population: </strong>
-                                        <span className="country-info">210223456</span>
+                                   <div className="country-infos-box-right-part">
+
+                                        <div className="hugging-elements">
+                                             <strong className="info-label">Top Level Domain: </strong>
+                                             <span className="country-info">{country.tld}</span>
+                                        </div>
+
+                                        <div className="hugging-elements">
+                                             <strong className="info-label">Currencies: </strong>
+                                             <span className="country-info">{country?.currencies[Object.keys(country?.currencies)[0]]?.name}</span>
+                                        </div>
+
+                                        <div className="hugging-elements">
+                                             <strong className="info-label">Languages: </strong>
+                                             <span className="country-info">{country?.languages[Object.keys(country?.languages)[0]]}</span>
+                                        </div>
+     
                                    </div>
-                                   <div className="hugging-elements">
-                                        <strong className="info-label">Region: </strong>
-                                        <span className="country-info">Americas</span>
-                                   </div>
-                                   <div className="hugging-elements">
-                                        <strong className="info-label">Sub Region: </strong>
-                                        <span className="country-info">South America</span>
-                                   </div>
-                                   <div className="hugging-elements">
-                                        <strong className="info-label">Capital: </strong>
-                                        <span className="country-info">Brasília</span>  
-                                   </div>
-         
                               </div>
-
-                              <div className="country-infos-box-right-part">
-
-                                   <div className="hugging-elements">
-                                        <strong className="info-label">Top Level Domain: </strong>
-                                        <span className="country-info">.br</span>
-                                   </div>
-
-                                   <div className="hugging-elements">
-                                        <strong className="info-label">Currencies: </strong>
-                                        <span className="country-info">BRL</span>
-                                   </div>
-
-                                   <div className="hugging-elements">
-                                        <strong className="info-label">Languages: </strong>
-                                        <span className="country-info">Portuguese</span>
-                                   </div>
-   
-                              </div>
-                         </div>
                          
                          
-                         <div className="country-infos-box-bottom-part">
-                         <strong className="border-countries">Border Countries: </strong>
-                         <span className="border-country-name">Argentina</span>
-                         <span className="border-country-name">Uruguai</span>
-                         <span className="border-country-name">Paraguai</span>
+                              <div className="country-infos-box-bottom-part">
+                                   <strong className="border-countries">Border Countries: </strong>
+                                   <span className="border-country-name">Argentina</span>
+                                   <span className="border-country-name">Uruguai</span>
+                                   <span className="border-country-name">Paraguai</span>
+                              </div>
+                              </div>
                          </div>
-                    </div>
-               </div>
+                    ))
+               ):"Não há informações para serem mostradas"}
+               
+               
           </div>
      )
 }
