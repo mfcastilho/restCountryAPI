@@ -4,19 +4,19 @@ import { useNavigate } from "react-router-dom";
 import {SelectRegionContext} from "../selectRegionProvider/SelectRegionProvider";
 
 
-function BackButton(){
+function BackButton(props){
      const navigate = useNavigate();
 
      const  { selectedRegion, setSelectedRegion} = useContext(SelectRegionContext)
 
-     function BackButton(){
+     function handleClick(){
           setSelectedRegion("Filter by Region");
           navigate("/");
      }
 
      return(
           <div className="back-button-container">
-               <button onClick={BackButton} className="back-button">
+               <button onClick={handleClick} className={`${props.theme === "light" ? "back-button" : "back-button back-button-dark-mode"}`} >
                     <img src="../public/left-arrow.png" alt="" />
                     Back
                </button>

@@ -7,7 +7,8 @@
 
      padding: 0 6rem;
 
-     margin-bottom: 12rem;
+     /* margin-bottom: 12rem; */
+     height: 100vh;
 }
 
 .country-flag-and-infos-container{
@@ -19,7 +20,7 @@
 
 }
 
-.country-flag-and-infos-container img{
+.country-flag-image{
      width: 40%;
      max-height: 35rem;
 
@@ -35,7 +36,7 @@
      
 }
 
-.country-infos-box h4{
+.country-name-title{
      font-size: 3rem;
 }
 
@@ -86,6 +87,7 @@
 .border-countries{
      font-size: 1.6rem;
      margin-right: 1.6rem;
+     
 }
 .border-country-name{
      font-size: 1.4rem;
@@ -101,6 +103,38 @@
      justify-content: center;
 
      margin-left: .8rem;
+     margin-bottom: .3rem;
 
      cursor: pointer;
+}
+
+
+
+
+
+
+.country-flag-image-dak-mode{
+     border: .5px solid #1c2b34;
+}
+
+.country-name-title-dark-mode{
+     color: var(--dark-mode-text);
+}
+
+.info-label-dark-mode{
+     color: var(--dark-mode-text);
+}
+
+.country-info-dark-mode{
+     color: var(--dark-mode-text);
+}
+
+.border-countries-dark-mode{
+     color: var(--dark-mode-text);
+}
+
+.border-country-name-dark-mode{
+     background-color: var(--dark-mode-elements);
+     box-shadow: 0px 0px 10px 1px rgba(8, 11, 14, 0.5);
+     color: var(--dark-mode-text);
 }

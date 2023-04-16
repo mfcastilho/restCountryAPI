@@ -7,7 +7,7 @@ import axios from "axios";
 
 const baseURL = "https://restcountries.com/v3.1";
 
-function CountryDetails(){
+function CountryDetails(props){
 
      const location = useLocation();
      let countryName = location.state.countryName;
@@ -66,7 +66,7 @@ function CountryDetails(){
                setCountriesBorder(countryBorders);
                
           } catch (error) {
-               console.log(error.data.message);
+               console.log(error.message);
           }
      }
 
@@ -79,40 +79,40 @@ function CountryDetails(){
 
      return (
           <div className="country-details-container">
-               <BackButton />
+               <BackButton theme={props.theme} />
 
                {country.length > 0 ? (
 
                     country.map((country, index) => (
                          <div key={index} className="country-flag-and-infos-container">
-                         <img src={country.flags.svg} alt="" />
+                         <img className={`${props.theme === "light" ? "country-flag-image" : "country-flag-image country-flag-image-dak-mode"}`} src={country.flags.svg} alt="" />
                          <div className="country-infos-box">
 
-                              <h4>{country.name.common}</h4>
+                              <h4 className={`${props.theme === "light" ? "country-name-title" : "country-name-title country-name-title-dark-mode"}`} >{country.name.common}</h4>
                               <div className="wrapper-country-infos-box-parts">
                                    
                                    <div className="country-infos-box-left-part">
                                         
                                         <div className="hugging-elements">
-                                             <strong className="info-label">Native Name: </strong>
-                                             <span className="country-info">{country.name.nativeName[Object.keys(country?.name?.nativeName)[0]].common}</span>
+                                             <strong className={`${props.theme === "light" ? "info-label" : "info-label info-label-dark-mode"}`} >Native Name: </strong>
+                                             <span className={`${props.theme === "light" ? "country-info" : "country-info country-info-dark-mode"}`} >{country.name.nativeName[Object.keys(country?.name?.nativeName)[0]].common}</span>
                                         </div>
 
                                         <div className="hugging-elements">
-                                             <strong className="info-label">Population: </strong>
-                                             <span className="country-info">{country.population}</span>
+                                             <strong className={`${props.theme === "light" ? "info-label" : "info-label info-label-dark-mode"}`}>Population: </strong>
+                                             <span className={`${props.theme === "light" ? "country-info" : "country-info country-info-dark-mode"}`}>{country.population}</span>
                                         </div>
                                         <div className="hugging-elements">
-                                             <strong className="info-label">Region: </strong>
-                                             <span className="country-info">{country.region}</span>
+                                             <strong className={`${props.theme === "light" ? "info-label" : "info-label info-label-dark-mode"}`}>Region: </strong>
+                                             <span className={`${props.theme === "light" ? "country-info" : "country-info country-info-dark-mode"}`}>{country.region}</span>
                                         </div>
                                         <div className="hugging-elements">
-                                             <strong className="info-label">Sub Region: </strong>
-                                             <span className="country-info">{country.subregion}</span>
+                                             <strong className={`${props.theme === "light" ? "info-label" : "info-label info-label-dark-mode"}`}>Sub Region: </strong>
+                                             <span className={`${props.theme === "light" ? "country-info" : "country-info country-info-dark-mode"}`}>{country.subregion}</span>
                                         </div>
                                         <div className="hugging-elements">
-                                             <strong className="info-label">Capital: </strong>
-                                             <span className="country-info">{country.capital}</span>  
+                                             <strong className={`${props.theme === "light" ? "info-label" : "info-label info-label-dark-mode"}`}>Capital: </strong>
+                                             <span className={`${props.theme === "light" ? "country-info" : "country-info country-info-dark-mode"}`}>{country.capital}</span>  
                                         </div>
           
                                    </div>
@@ -120,18 +120,18 @@ function CountryDetails(){
                                    <div className="country-infos-box-right-part">
 
                                         <div className="hugging-elements">
-                                             <strong className="info-label">Top Level Domain: </strong>
-                                             <span className="country-info">{country.tld}</span>
+                                             <strong className={`${props.theme === "light" ? "info-label" : "info-label info-label-dark-mode"}`}>Top Level Domain: </strong>
+                                             <span className={`${props.theme === "light" ? "country-info" : "country-info country-info-dark-mode"}`}>{country.tld}</span>
                                         </div>
 
                                         <div className="hugging-elements">
-                                             <strong className="info-label">Currencies: </strong>
-                                             <span className="country-info">{country?.currencies[Object.keys(country?.currencies)[0]]?.name}</span>
+                                             <strong className={`${props.theme === "light" ? "info-label" : "info-label info-label-dark-mode"}`}>Currencies: </strong>
+                                             <span className={`${props.theme === "light" ? "country-info" : "country-info country-info-dark-mode"}`}>{country?.currencies[Object.keys(country?.currencies)[0]]?.name}</span>
                                         </div>
 
                                         <div className="hugging-elements">
-                                             <strong className="info-label">Languages: </strong>
-                                             <span className="country-info">{country?.languages[Object.keys(country?.languages)[0]]}</span>
+                                             <strong className={`${props.theme === "light" ? "info-label" : "info-label info-label-dark-mode"}`}>Languages: </strong>
+                                             <span className={`${props.theme === "light" ? "country-info" : "country-info country-info-dark-mode"}`}>{country?.languages[Object.keys(country?.languages)[0]]}</span>
                                         </div>
      
                                    </div>
@@ -140,13 +140,13 @@ function CountryDetails(){
                          
                               <div className="country-infos-box-bottom-part">
                                    <div className="left-part">
-                                        <strong className="border-countries">Border Countries: </strong>
+                                        <strong className={`${props.theme === "light" ? "border-countries" : "border-countries border-countries-dark-mode"}`} >Border Countries: </strong>
                                    </div>
                                    <div className="right-part">
                                    {countriesBorder.length > 0 ? (
 
                                         countriesBorder.map((country, index) =>(
-                                             <span key={index} className="border-country-name" data-name={country.common} onClick={goToCountryBorderSelected}>{country.common}</span>
+                                             <span key={index} className={`${props.theme === "light" ? "border-country-name" : "border-country-name border-country-name-dark-mode"}`} data-name={country.common} onClick={goToCountryBorderSelected}>{country.common}</span>
                                         ))
 
                                    ) : (<span >Border not found</span>)}

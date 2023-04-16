@@ -18,7 +18,7 @@
      cursor: pointer;
 }
 
-.card-container img{
+.card-image{
      border-top-right-radius: .5rem;
      border-top-left-radius: .5rem;
 
@@ -64,8 +64,7 @@
      
 }
 
-.card-container .card-image-dark-mode{
+.card-image-dark-mode{
      border: .5px solid #1c2b34;
 }
 
-/*8, 11, 14,*/

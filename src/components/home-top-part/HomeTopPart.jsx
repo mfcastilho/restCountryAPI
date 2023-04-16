@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 
 const baseURL = "https://restcountries.com/v3.1";
 
-function HomeTopPart(){
+function HomeTopPart(props){
 
     const {selectedRegion, setSelectedRegion, searchCountry, setSearchCountry} = useContext(SelectRegionContext);
     const [country, setCountry] = useState(true);
@@ -37,16 +37,16 @@ function HomeTopPart(){
 
 
      return(
-
+       
         <div className="home-top-part-container">
             <div className="home-top-part-box">
-                <form action="" className="search-country-form ">
-                    <button className="input-button " onClick={searchingCountry}><img src="../public/lupa.png" alt="" /></button>
-                    <input type="text" className="search-country-input " value={searchCountry} onChange={(e)=> setSearchCountry(e.target.value)} placeholder="Search for a country..." />
+                <form action="" className={`${props.theme === "light" ? "search-country-form" : "search-country-form search-country-form-dark-mode" }`}> 
+                    <button className={`${props.theme === "light" ? "input-button" : "input-button input-button-dark-mode"}`} onClick={searchingCountry}><img src="../public/lupa.png" alt="" /></button>
+                    <input type="text" className={`${props.theme === "light" ? "search-country-input" : "search-country-input search-country-input-dark-mode"}`} value={searchCountry} onChange={(e)=> setSearchCountry(e.target.value)} placeholder="Search for a country..." />
                 </form>
                 
 
-                <select name="region" id="" className="region-select-list " value={selectedRegion} onChange={(e)=> setSelectedRegion(e.target.value)}>
+                <select name="region" id="" className={`${props.theme === "light" ? "region-select-list" : "region-select-list region-select-list-dark-mode"}`} value={selectedRegion} onChange={(e)=> setSelectedRegion(e.target.value)}>
                     <option>Filter by Region</option>
                     <option value="" style={{fontSize:"20px"}} disabled>&nbsp;</option>
                     <option value="africa" className="option-list">África</option>

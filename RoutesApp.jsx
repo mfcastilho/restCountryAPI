@@ -4,12 +4,12 @@ import Home from "./src/pages/Home";
 import CountryDetails from "./src/pages/CountryDetails";
 
 
-function RoutesApp(){
+function RoutesApp(props){
      return (
           <BrowserRouter>
                <Routes>
-                    <Route path="/" element={<Home />} />
-                    <Route path="/country" element={<CountryDetails />} />
+                    <Route   path="/" element={<Home changeToDarkMode={props.changeToDarkMode} changeToLightMode={props.changeToLightMode} theme={props.theme}  />} />
+                    <Route  path="/country" element={<CountryDetails changeToDarkMode={props.changeToDarkMode} changeToLightMode={props.changeToLightMode} theme={props.theme}  />} />
                </Routes>
           </BrowserRouter>
      );

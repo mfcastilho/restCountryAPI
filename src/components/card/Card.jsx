@@ -2,11 +2,11 @@ import React, { useContext, useEffect, useState } from 'react';
 import "./Card.css";
 import axios from 'axios';
 import {SelectRegionContext} from "../selectRegionProvider/SelectRegionProvider";
-import { Navigate, useNavigate } from 'react-router-dom';
+import { useNavigate } from 'react-router-dom';
 
 const baseURL = "https://restcountries.com/v3.1";
 
-function Card(){
+function Card(props){
 
      const navigate = useNavigate();
      const  { selectedRegion} = useContext(SelectRegionContext);
@@ -62,8 +62,8 @@ function Card(){
 
                {countries.length > 0 ? (
                     countries.map((country, index)=> (
-                         <div key={index} onClick={goToCountryDetailsPage} data-name={country.name.common} className="card-box ">
-                              <img className='' src={`${country.flags.png}`} alt="" />
+                         <div key={index} onClick={goToCountryDetailsPage} data-name={country.name.common} className={`${props.theme === "light" ? "card-box" : "card-box card-box-dark-mode"}`} >
+                              <img className={`${props.theme === "light" ? "card-image" : "card-image card-image-dark-mode"}`} src={`${country.flags.png}`} alt="" />
                               <div className="infos-box">
                                    <h4 className="country-name">{country.name.common}</h4>
 
