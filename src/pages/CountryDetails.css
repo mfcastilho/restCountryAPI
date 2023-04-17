@@ -138,7 +138,7 @@
 
 /*-- Media Queries --*/
 
-@media (max-width: 575px){
+@media (max-width: 875px){
      .country-details-container{
           padding: 0 2rem;
           height: 100%;

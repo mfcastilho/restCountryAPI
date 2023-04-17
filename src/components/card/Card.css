@@ -73,6 +73,20 @@
 /*-- Media Queries --*/
 
 
+@media (max-width: 1260px){
+     .card-box{
+          width: 30%;
+     }
+     
+}
+
+
+@media (max-width: 965px){
+     .card-box{
+          width: 45%;
+     }
+}
+
 
 @media (max-width: 575px){
      .card-container{

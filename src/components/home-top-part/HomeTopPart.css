@@ -137,9 +137,7 @@
 
 /*-- Media Queries --*/
 
-
-
-@media (max-width: 575px){
+@media (max-width: 775px){
      .home-top-part-container{
           margin-top: 2rem;
      }
@@ -163,11 +161,19 @@
 
      .region-select-list{
           height: 5rem;
-          width: 60%;
+          width: 40%;
           margin-top: 4rem;
      }
      
      .danger{
           display: none;
+     }
+}
+
+
+@media (max-width: 575px){
+     
+     .region-select-list{
+          width: 60%;
      }
 }
