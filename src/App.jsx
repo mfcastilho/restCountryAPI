@@ -22,7 +22,6 @@ function App() {
           document.querySelector(".light-mode-box").classList.add("disable"); 
      } 
 
-
   return (
     
     <SelectRegionProvider>
