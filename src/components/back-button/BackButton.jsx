@@ -17,7 +17,7 @@ function BackButton(props){
      return(
           <div className="back-button-container">
                <button onClick={handleClick} className={`${props.theme === "light" ? "back-button" : "back-button back-button-dark-mode"}`} >
-                    <img src="../public/left-arrow.png" alt="" />
+                    <img className={`${props.theme === "dark" ? "button-image-dark" : ""}`} src="../public/left-arrow.png" alt="" />
                     Back
                </button>
           </div>

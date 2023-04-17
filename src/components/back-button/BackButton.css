@@ -26,8 +26,15 @@
      height: 1.4rem;
 }
 
+
+
+
 .back-button-dark-mode{
      background-color: var(--dark-mode-elements);
      box-shadow: 0px 0px 10px 1px rgba(8, 11, 14, 0.5);
      color: var(--dark-mode-text);
+}
+
+.button-image-dark{
+     content: url("../public/with-left-arrow.png");
 }
