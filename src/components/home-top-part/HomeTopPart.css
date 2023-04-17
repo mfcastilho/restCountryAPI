@@ -121,6 +121,10 @@
      background-color: var(--dark-mode-elements);
 }
 
+.image-dark{
+     content: url("../public/white-lupa.png");
+}
+
 .search-country-input-dark-mode{
      background-color: var(--dark-mode-elements);
 

@@ -41,7 +41,7 @@ function HomeTopPart(props){
         <div className="home-top-part-container">
             <div className="home-top-part-box">
                 <form action="" className={`${props.theme === "light" ? "search-country-form" : "search-country-form search-country-form-dark-mode" }`}> 
-                    <button className={`${props.theme === "light" ? "input-button" : "input-button input-button-dark-mode"}`} onClick={searchingCountry}><img src="../public/lupa.png" alt="" /></button>
+                    <button className={`${props.theme === "light" ? "input-button" : "input-button input-button-dark-mode"}`} onClick={searchingCountry}><img className={`${props.theme === "dark" ? "image-dark" : ""}`} src="../public/lupa.png" alt="" /></button>
                     <input type="text" className={`${props.theme === "light" ? "search-country-input" : "search-country-input search-country-input-dark-mode"}`} value={searchCountry} onChange={(e)=> setSearchCountry(e.target.value)} placeholder="Search for a country..." />
                 </form>
                 {!country && <span className="danger-mobile">País não encontrado</span>}
