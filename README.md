@@ -1,4 +1,89 @@
-# Frontend Mentor - REST Countries API with color theme switcher
+# REST Countries API 
+
+Solução criada  a partir do desafio REST Countries API do site Frontend Mentor](https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca)
+
+## Índice
+
+- [Visão geral](#overview)
+  - [O desafio](#the-challenge)
+  - [Captura de tela](#screenshot)
+  - [Deploy](#links)
+- [Meu processo](#my-process)
+  - [Construído com](#built-with)
+  - [O que eu aprendi](#what-i-learned)
+- [Autor](#author)
+
+## Visão geral
+
+### O desafio
+
+Os usuários devem ser capazes de:
+-Veja todos os países da API na página inicial
+-Pesquise um país usando um input
+-Filtrar países por região
+-Clique em um país para ver informações mais detalhadas em uma página separada
+-Clique nos países fronteiriços na página de detalhes
+-Alternar o esquema de cores entre o modo claro e escuro (opcional)
+
+### Captura de tela
+
+![](./screenshot.jpg)
+
+
+### Deploy
+
+- URL: 
+
+## Meu processo
+
+### Construído com
+
+-  React
+- CSS puro
+
+### O que eu aprendi
+
+Aprendi a usar  Hooks, props e Context API
+
+
+## Author
+
+- Website - [Add your name here](https://www.your-site.com)
+- Frontend Mentor - [@yourusername](https://www.frontendmentor.io/profile/yourusername)
+- Twitter - [@yourusername](https://www.twitter.com/yourusername)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ![Design preview for the REST Countries API with color theme switcher coding challenge](./design/desktop-preview.jpg)
 
