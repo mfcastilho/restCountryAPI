@@ -131,7 +131,7 @@ function CountryDetails(props){
 
                                         <div className="hugging-elements">
                                              <strong className={`${props.theme === "light" ? "info-label" : "info-label info-label-dark-mode"}`}>Languages: </strong>
-                                             <span className={`${props.theme === "light" ? "country-info" : "country-info country-info-dark-mode"}`}>{country?.languages[Object.keys(country?.languages)[0]]}</span>
+                                             <span className={`${props.theme === "light" ? "country-info" : "country-info country-info-dark-mode"}`}>{Object.values(country?.languages).join(', ')}</span>
                                         </div>
      
                                    </div>
