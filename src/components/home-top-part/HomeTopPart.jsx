@@ -44,6 +44,7 @@ function HomeTopPart(props){
                     <button className={`${props.theme === "light" ? "input-button" : "input-button input-button-dark-mode"}`} onClick={searchingCountry}><img src="../public/lupa.png" alt="" /></button>
                     <input type="text" className={`${props.theme === "light" ? "search-country-input" : "search-country-input search-country-input-dark-mode"}`} value={searchCountry} onChange={(e)=> setSearchCountry(e.target.value)} placeholder="Search for a country..." />
                 </form>
+                {!country && <span className="danger-mobile">País não encontrado</span>}
                 
 
                 <select name="region" id="" className={`${props.theme === "light" ? "region-select-list" : "region-select-list region-select-list-dark-mode"}`} value={selectedRegion} onChange={(e)=> setSelectedRegion(e.target.value)}>

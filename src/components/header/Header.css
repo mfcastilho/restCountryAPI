@@ -45,10 +45,37 @@ header{
 
 
 
-
+/*-- Dark Mode Classes --*/
 
 .header-dark-mode{
      background-color: var(--dark-mode-elements);
      box-shadow: 0px 0px 10px 1px rgba(8, 11, 14, 0.5);
      color: var(--dark-mode-text);
+}
+
+
+
+
+/*-- Media Queries --*/
+
+@media (max-width: 375px) {
+     header{
+          height: 8rem;
+          margin-bottom: 2.5rem;
+          padding: 0 2rem;
+     }
+     
+     .header-title{
+          font-size: 1.5rem;
+     }
+       
+     .light-mode-title, .dark-mode-title{
+          font-size: 1.3rem;
+          font-weight: 800;    
+     }
+     
+     .dark-mode-img, .light-mode-img{
+          width: 1.3rem;
+     }
+     
 }

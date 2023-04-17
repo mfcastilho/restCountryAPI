@@ -18,8 +18,19 @@ main{
 }
 
 
+/*-- Dark Mode Classes --*/
 
 .main-dark-mode{
      background-color: var(--dark-mode-elements);
      background-color: var(--background-dark-mode);
+}
+
+
+
+/*-- Media Queries --*/
+
+@media (max-width: 375px){
+     main{
+          padding: 0 2rem;
+     }
 }

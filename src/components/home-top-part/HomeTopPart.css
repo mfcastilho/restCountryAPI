@@ -11,11 +11,10 @@
 .home-top-part-box{
      width: 100%;
      max-width: 1440px;
+
      display: flex;
      justify-content: space-between;
-     align-items: center;
-
-     
+     align-items: center;   
 }
 
 .search-country-form{
@@ -25,22 +24,26 @@
 
      width: 36.5%;
 
-
      border-radius: .5rem;
 
      padding-left: 3rem;
 }
 
+.danger-mobile{
+     display: none;
+}
+
 .search-country-input{
      border: none;
+
      font-size: 1.1rem;
      margin-left: 2rem;
+
      width: 100%;
      height: 5rem;
 
      border-top-right-radius: .5rem;
-     border-bottom-right-radius: .5rem;
-     
+     border-bottom-right-radius: .5rem;    
 }
 
 .search-country-input:focus{
@@ -64,11 +67,10 @@
      border: none;
      background-color: #FFF;
 
-     cursor: pointer;
-    
+     cursor: pointer;   
 }
 
-/*box-shadow: 0 3px 5px 1px rgba(201, 198, 198, 0.5);*/
+
 .input-button img{
      width: 1.8rem;
 }
@@ -78,56 +80,92 @@
 
      box-shadow: 0px 0px 10px 1px rgba(201, 198, 198, 0.5);
 
-
      border-radius: .5rem;
      border: none;
 
      padding: 0 2rem;
 
      position: relative;
-
-     
 }
 
 .region-select-list:focus{
      outline: none;
- 
 }
 
 .region-select-list option {
      line-height: 2rem; 
      padding: 0.5rem;
-   }
+}
 
-   .danger{
+.danger{
      color: red;
      font-size: 1.2rem;
      margin-left: 3rem;
-   }
+}
 
 
 
 
 
 
-   
+/*-- Dark Mode Classes --*/
 
-   .search-country-form-dark-mode{
+.search-country-form-dark-mode{
      background-color: var(--dark-mode-elements);
      box-shadow: 0px 0px 10px 1px rgba(8, 11, 14, 0.5);
-   }
+}
 
-   .input-button-dark-mode{
+.input-button-dark-mode{
      background-color: var(--dark-mode-elements);
-   }
+}
 
-   .search-country-input-dark-mode{
+.search-country-input-dark-mode{
      background-color: var(--dark-mode-elements);
+
      color: var(--light-mode-input);
-   }
+}
 
-   .region-select-list-dark-mode{
+.region-select-list-dark-mode{
      background-color: var(--dark-mode-elements);
      box-shadow: 0px 0px 10px 1px rgba(8, 11, 14, 0.5);
+
      color: var(--light-mode-input);
-   }
+}
+
+
+
+
+/*-- Media Queries --*/
+
+@media (max-width: 375px){
+     .home-top-part-container{
+          margin-top: 2rem;
+     }
+     
+     .home-top-part-box{
+          width: 100%;
+          flex-direction: column;
+          align-items: flex-start;
+     }
+
+     .search-country-form{
+          width: 100%;
+     }
+
+     .danger-mobile{
+          display: block;
+          color: red;
+          font-size: 1.2rem;
+          margin-left: 3rem;   
+     }
+
+     .region-select-list{
+          height: 5rem;
+          width: 60%;
+          margin-top: 4rem;
+     }
+     
+     .danger{
+          display: none;
+     }
+}
