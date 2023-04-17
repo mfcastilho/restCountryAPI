@@ -1,7 +1,7 @@
 # REST Countries API 
 
 Solução criada  a partir do desafio REST Countries API do site Frontend Mentor
-Link do desafio: https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca
+ - Link do desafio: https://www.frontendmentor.io/challenges/rest-countries-api-with-color-theme-switcher-5cacc469fec04111f7b848ca
 
 ## Índice
 
