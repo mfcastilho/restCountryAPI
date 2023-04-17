@@ -137,7 +137,9 @@
 
 /*-- Media Queries --*/
 
-@media (max-width: 375px){
+
+
+@media (max-width: 575px){
      .home-top-part-container{
           margin-top: 2rem;
      }

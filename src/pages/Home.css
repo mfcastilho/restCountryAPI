@@ -29,7 +29,7 @@ main{
 
 /*-- Media Queries --*/
 
-@media (max-width: 375px){
+@media (max-width: 575px){
      main{
           padding: 0 2rem;
      }

@@ -58,7 +58,7 @@ header{
 
 /*-- Media Queries --*/
 
-@media (max-width: 375px) {
+@media (max-width: 575px) {
      header{
           height: 8rem;
           margin-bottom: 2.5rem;
