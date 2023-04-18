@@ -19,12 +19,12 @@ Solução criada  a partir do desafio REST Countries API do site Frontend Mentor
 ### O desafio
 
 Os usuários devem ser capazes de:
--Veja todos os países da API na página inicial
--Pesquise um país usando um input
--Filtrar países por região
--Clique em um país para ver informações mais detalhadas em uma página separada
--Clique nos países fronteiriços na página de detalhes
--Alternar o esquema de cores entre o modo claro e escuro (opcional)
+- Veja todos os países da API na página inicial
+- Pesquise um país usando um input
+- Filtrar países por região
+- Clique em um país para ver informações mais detalhadas em uma página separada
+- Clique nos países fronteiriços na página de detalhes
+- Alternar o esquema de cores entre o modo claro e escuro (opcional)
 
 ### Captura de tela
 
